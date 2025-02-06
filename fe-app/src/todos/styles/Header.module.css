@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.todos-header {
+  width: calc(94% - 460px);
+  height: 100px;
+  margin: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  display: flex;
+  padding: 0 20px;
+}
+
+.header-title img {
+  max-width: 35px;
+}
+
+.header-title h2 {
+  font-size: 30px;
+  line-height: 100px;
+  color: #3f51b5;
+  margin: 0 6px;
+}
+
+.header-toolbar {
+  display: flex;
+  padding: 0 20px;
+}
+
+.add-todo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.add-todo-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #90caf9;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.add-todo-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar-btn-wrapper {
+  display: none;
+}
+
+.avatar-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #807b7b;
+  border-radius: 50%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: border 0.15s;
+}
+
+.avatar-btn.dark-theme {
+  border: 1px solid #fff;
+}
+
+@media (max-width: 1399px) {
+  .todos-header {
+    width: calc(98% - 420px);
+    margin: 0 1%;
+  }
+
+  .header-title img {
+    max-width: 32px;
+  }
+
+  .header-title h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .todos-header {
+    width: 100%;
+  }
+
+  .header-title h2 {
+    font-size: 26px;
+  }
+
+  .add-todo-wrapper {
+    margin-right: 10px;
+  }
+
+  .avatar-btn-wrapper {
+    display: flex;
+  }
+}
+
+@media (max-width: 575px) {
+  .todos-header {
+    height: 70px;
+    margin: 0;
+  }
+
+  .header-title {
+    padding: 0 15px;
+  }
+
+  .header-title img {
+    max-width: 28px;
+  }
+
+  .header-title h2 {
+    font-size: 22px;
+    line-height: 70px;
+  }
+
+  .header-toolbar {
+    padding: 0 15px;
+  }
+
+  .add-todo-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .avatar-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}

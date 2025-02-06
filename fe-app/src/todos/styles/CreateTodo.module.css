@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.todo-form-wrapper {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s, opacity 0.2s;
+}
+
+.todo-form-wrapper.active {
+  max-height: 360px;
+  opacity: 1;
+}
+
+.todo-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #cccfdf;
+  border-radius: 8px;
+  background-color: rgba(164, 212, 252, 0.1);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.todo-form.dark-theme {
+  background-color: #0a1622;
+}
+
+.todo-title-input,
+.todo-desc-input,
+.todo-date-input,
+.todo-list-input {
+  margin: 5px 10px;
+}
+
+.todo-title-input,
+.todo-desc-input {
+  width: 100%;
+}
+
+.todo-title-input {
+  margin-bottom: 0;
+}
+
+.todo-title-input input {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.todo-desc-input {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 102px;
+}
+
+.todo-date-input,
+.todo-list-input {
+  width: calc(50% - 13px);
+}
+
+.todo-date-input {
+  margin-right: 3px;
+  position: relative;
+}
+
+.todo-list-input {
+  margin-left: 3px;
+  position: relative;
+}
+
+.todo-date-input input,
+.todo-list-input select {
+  height: 42px;
+}
+
+.todo-date-input::after {
+  content: url("../../../public/images/date-input.svg");
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 10px;
+  pointer-events: none;
+}
+
+.todo-list-input::after {
+  content: url("../../../public/images/list-input.svg");
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 10px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.todo-validation-err {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #f13b2e;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s, color 0.15s;
+}
+
+.todo-validation-err.dark-theme {
+  color: #38a6d9;
+}
+
+.todo-validation-err.active {
+  max-height: 21px;
+}
+
+.todo-validation-err p {
+  padding: 0 15px;
+  margin: 0;
+}
+
+.todo-save-btn {
+  width: 100%;
+  margin: 25px 0 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo-save-btn button {
+  padding: 0 10px;
+  font: 500 18px/42px "DM Sans", sans-serif;
+  border: none;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.todo-save-btn button:hover {
+  background-color: #5566c5;
+}
+
+@media (max-width: 1399px) {
+  .todo-form-wrapper {
+    padding: 0 8%;
+  }
+
+  .todo-form {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .todo-form-wrapper {
+    padding: 0 5%;
+  }
+
+  .todo-form-wrapper.active {
+    max-height: 390px;
+  }
+
+  .todo-form {
+    padding: 20px 0;
+  }
+
+  .todo-validation-err.active {
+    max-height: 42px;
+  }
+
+  .todo-save-btn button {
+    width: 100%;
+    margin-left: 10px;
+  }
+}

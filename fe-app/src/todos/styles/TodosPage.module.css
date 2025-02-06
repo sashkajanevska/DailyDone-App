@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+.todos-page {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Roboto Slab", sans-serif;
+  position: relative;
+}
+
+.modal-bg {
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 90px);
+  background-color: rgba(10, 22, 34, 0.3);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: pointer-events 0.5s, opacity 0.5s, background-color 0.2s;
+}
+
+.modal-bg.dark-theme {
+  background-color: rgba(199, 214, 230, 0.3);
+}
+
+.modal-bg.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 991px) {
+  .modal-bg {
+    display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-bg {
+    top: 70px;
+    height: calc(100% - 70px);
+  }
+}

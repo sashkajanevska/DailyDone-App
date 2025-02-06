@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.todos-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 40px;
+}
+
+.todo {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 0 0 10px;
+  border: 1px solid #cccfdf;
+  border-radius: 8px;
+  background-color: #fff;
+  position: relative;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.todo.dark-theme {
+  background-color: #0a1622;
+}
+
+.todo-edit-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-title-input,
+.edit-desc-input,
+.edit-date-input,
+.edit-list-input {
+  margin: 5px 10px;
+}
+
+.edit-title-input {
+  margin-bottom: 0;
+}
+
+.edit-title-input,
+.edit-desc-input {
+  width: 100%;
+}
+
+.edit-title-input input {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.edit-desc-input {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 102px;
+}
+
+.edit-date-input,
+.edit-list-input {
+  width: calc(50% - 13px);
+}
+
+.edit-date-input {
+  margin-right: 3px;
+  position: relative;
+}
+
+.edit-list-input {
+  margin-left: 3px;
+  position: relative;
+}
+
+.edit-date-input input,
+.edit-list-input select {
+  height: 42px;
+}
+
+.edit-date-input::after {
+  content: url("../../../public/images/date-input.svg");
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 10px;
+  pointer-events: none;
+}
+
+.edit-list-input::after {
+  content: url("../../../public/images/list-input.svg");
+  position: absolute;
+  right: 5px;
+  top: calc(50% - 10px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.edit-validation-err {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #f13b2e;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s, color 0.15s;
+}
+
+.edit-validation-err.dark-theme {
+  color: #38a6d9;
+}
+
+.edit-validation-err.active {
+  max-height: 21px;
+}
+
+.edit-validation-err p {
+  padding: 0 15px;
+  margin: 0;
+}
+
+.edit-btns {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.save-edit-btn,
+.discard-edit-btn {
+  margin: 0 10px;
+}
+
+.save-edit-btn {
+  margin-right: 5px;
+}
+
+.discard-edit-btn {
+  margin-left: 5px;
+}
+
+.save-edit-btn button,
+.discard-edit-btn button {
+  width: 100%;
+  padding: 0 10px;
+  font: 500 18px/42px "DM Sans", sans-serif;
+  border: none;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.discard-edit-btn button {
+  background-color: #a19e9e;
+}
+
+.save-edit-btn button:hover {
+  background-color: #5566c5;
+}
+
+.discard-edit-btn button:hover {
+  background-color: #c0bfbf;
+}
+
+.todo-details {
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+}
+
+.todo-completed-btn {
+  width: 20px;
+}
+
+.todo-completed-btn button {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #3f51b5;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.todo-completed-btn.active button {
+  background-color: #3f51b5;
+}
+
+.todo-completed-btn button > img {
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+  transition: visibility 0.1s;
+}
+
+.todo-completed-btn.active button > img {
+  visibility: visible;
+}
+
+.todo-text-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 70px);
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #272727;
+  transition: color 0.15s;
+}
+
+.todo-text-content.dark-theme {
+  color: #fff;
+}
+
+.todo-title {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+
+.todo-desc {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #414141;
+  margin: 0 0 12px;
+  transition: color 0.15s;
+}
+
+.todo-text-content.dark-theme .todo-desc {
+  color: #e5e6e9;
+}
+
+.todo-date {
+  display: flex;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+}
+
+.todo-date p {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding-left: 6px;
+  color: #3f51b5;
+}
+
+.todo-list {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding-left: 8px;
+  color: #ff9a27;
+}
+
+.todo-btns-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.todo-btns-top,
+.todo-btn-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.todo-edit-btn,
+.todo-flag-btn,
+.todo-delete-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  margin-right: 10px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.todo-flag-btn {
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.todo-flag-btn.active {
+  opacity: 1;
+}
+
+.todo-flag-btn,
+.todo-delete-btn {
+  margin-right: 0;
+}
+
+.todo-delete-btn {
+  width: 18px;
+  height: 18px;
+}
+
+.todo-edit-btn img,
+.todo-flag-btn img,
+.todo-delete-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.todo-edit-btn.dark-theme img,
+.todo-delete-btn.dark-theme img {
+  filter: invert(1);
+}
+
+.no-todos-msg {
+  width: 100%;
+  height: 50vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.no-todos-msg p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #272727;
+  margin: 10px 0;
+  transition: color 0.15s;
+}
+
+.no-todos-msg.dark-theme p {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .todo-completed-btn {
+    width: 18px;
+  }
+
+  .todo-completed-btn button {
+    height: 18px;
+  }
+
+  .todo-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .todo-edit-form {
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
+  }
+
+  .edit-validation-err.active {
+    max-height: 42px;
+  }
+
+  .todo-date p,
+  .todo-list {
+    font-size: 14px;
+  }
+
+  .todo-edit-btn {
+    margin-right: 8px;
+  }
+
+  .no-todos-msg {
+    padding: 0 5%;
+  }
+  
+  .no-todos-msg p {
+    font-size: 16px;
+  }
+}
