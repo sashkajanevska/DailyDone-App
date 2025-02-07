@@ -396,9 +396,10 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .sidebar-menu-section {
-    right: 10%;
-    max-width: 80%;
+    right: 5%;
+    max-width: 90%;
+    max-height: 60%;
   }
 }

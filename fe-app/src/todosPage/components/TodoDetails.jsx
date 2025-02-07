@@ -23,7 +23,7 @@ export default function TodoDetails({
     <div className={styles["todo-details"]}>
       <div
         className={`${styles["todo-completed-btn"]} ${
-          todo.isCompleted === true ? styles["active"] : ""
+          todo.isCompleted ? styles["active"] : ""
         }`}
       >
         <button onClick={toggleCompleted}>
@@ -31,7 +31,11 @@ export default function TodoDetails({
         </button>
       </div>
 
-      <div className={`${styles["todo-text-content"]} ${themeClassName}`}>
+      <div
+        className={`${styles["todo-text-content"]} ${themeClassName} ${
+          todo.isCompleted ? styles["inactive"] : ""
+        }`}
+      >
         <h2 className={styles["todo-title"]}>{todo.title}</h2>
         <p className={styles["todo-desc"]}>{todo.description}</p>
         <div className={styles["todo-date"]}>
@@ -44,7 +48,11 @@ export default function TodoDetails({
       </div>
 
       <div className={styles["todo-btns-wrapper"]}>
-        <div className={styles["todo-btns-top"]}>
+        <div
+          className={`${styles["todo-btns-top"]} ${
+            todo.isCompleted ? styles["inactive"] : ""
+          }`}
+        >
           <button
             className={`${styles["todo-edit-btn"]} ${themeClassName}`}
             onClick={() => handleEdit(todo)}

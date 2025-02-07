@@ -209,11 +209,19 @@
   padding-left: 10px;
   font-family: Arial, Helvetica, sans-serif;
   color: #272727;
-  transition: color 0.15s;
+  transition: color 0.15s, opacity 0.2s;
 }
 
 .todo-text-content.dark-theme {
   color: #fff;
+}
+
+.todo-text-content.inactive {
+  opacity: 0.5;
+}
+
+.todo-text-content.inactive h2 {
+  text-decoration: line-through;
 }
 
 .todo-title {
@@ -272,6 +280,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  transition: opacity 0.2s;
+}
+
+.todo-btns-top.inactive {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .todo-edit-btn,
@@ -377,7 +391,7 @@
   .no-todos-msg {
     padding: 0 5%;
   }
-  
+
   .no-todos-msg p {
     font-size: 16px;
   }

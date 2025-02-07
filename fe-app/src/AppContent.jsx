@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
-import AuthPage from "./auth/components//AuthPage";
-import TodosPage from "./todos/components/TodosPage";
+import AuthPage from "./authPage/components//AuthPage";
+import TodosPage from "./todosPage/components/TodosPage";
 import "./App.css";
 
 export default function AppContent() {

@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/users", userController);
 app.use(authenticateUser);
 app.use("/todos", todoController);
-app.use((req, res) => {
+app.use("*", (req, res) => {
   res.status(404).send(
     `<h1>404 - Page Not Found</h1><br>
      <p>The page you're looking for doesn't exist.</p><br>
