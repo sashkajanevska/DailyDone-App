@@ -58,7 +58,7 @@ select {
 .App.dark-theme select,
 .App.dark-theme textarea {
   background-color: #0e1e2c;
-  color: #fff;
+  color: #cccfdf;
 }
 
 .App input::placeholder,

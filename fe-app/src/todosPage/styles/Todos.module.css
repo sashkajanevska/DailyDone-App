@@ -213,7 +213,7 @@
 }
 
 .todo-text-content.dark-theme {
-  color: #fff;
+  color: #cccfdf;
 }
 
 .todo-text-content.inactive {
@@ -243,7 +243,7 @@
 }
 
 .todo-text-content.dark-theme .todo-desc {
-  color: #e5e6e9;
+  color: #cccfdf;
 }
 
 .todo-date {
@@ -351,7 +351,7 @@
 }
 
 .no-todos-msg.dark-theme p {
-  color: #fff;
+  color: #cccfdf;
 }
 
 @media (max-width: 991px) {

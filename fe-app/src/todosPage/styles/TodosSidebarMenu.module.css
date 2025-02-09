@@ -80,7 +80,7 @@
   background-color: azure;
   border-radius: 8px;
   border: none;
-  font: 400 16px/1.2 "DM Sans", sans-serif;
+  font: 400 18px/1.2 "DM Sans", sans-serif;
   cursor: pointer;
   transition: background-color 0.25s ease-in-out, color 0.15s;
 }
@@ -92,8 +92,8 @@
 
 .todo-filter-btn > div {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .todo-filter-btn img {
@@ -136,16 +136,16 @@
 }
 
 .todo-filter-btn div > p {
-  line-height: 2.5;
-  margin-top: 7px;
-  margin-bottom: 5px;
+  line-height: 1.2;
+  margin-top: 12px;
+  margin-bottom: 0;
 }
 
 .todo-filter-btn > p {
   font-size: 22px;
   font-weight: 500;
-  line-height: 2.5;
-  margin: 0;
+  line-height: 1.5;
+  margin: 0 5px 0 0;
 }
 
 .todo-list-btns {
@@ -184,7 +184,7 @@
   color: #272727;
   background-color: transparent;
   border: none;
-  font: 400 16px/1.2 "DM Sans", sans-serif;
+  font: 400 18px/1.2 "DM Sans", sans-serif;
   cursor: pointer;
   transition: color 0.15s;
 }
@@ -261,9 +261,49 @@
     width: 30px;
     height: 30px;
   }
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 799px) {
+  .todos-avatar-wrapper {
+    height: 80px;
+  }
+
+  .todos-avatar-wrapper > div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .todo-filter-btns {
+    padding-bottom: 10px;
+  }
+
+  .todo-filter-btn,
+  .todo-list-btn,
+  .logout-btn {
+    font: 400 16px/1.2 "DM Sans", sans-serif;
+  }
+
+  .todo-filter-btn div > p {
+    line-height: 1.2;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
 
   .todo-filter-btn > p {
     font-size: 20px;
+  }
+
+  .todo-list-btns {
+    padding-bottom: 10px;
+  }
+
+  .todo-list-btns div {
+    padding-top: 10px;
+  }
+
+  .todo-list-btn div {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -294,6 +334,22 @@
   .todo-filter-btn {
     width: 100%;
     padding: 5px 12px;
+    font: 400 16px/1.2 "DM Sans", sans-serif;
+    align-items: center;
+  }
+
+  .todo-filter-btn > div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .todo-filter-btn > div > p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .todo-filter-btn > p {
+    font-size: 20px;
   }
 
   .today-img,
@@ -302,6 +358,8 @@
   .priority-img,
   .completed-img {
     margin-right: 10px;
+    width: 32px;
+    height: 32px;
   }
 
   .todo-list-btns {
@@ -320,6 +378,11 @@
 
   .todo-list-btns.dark-theme h3 {
     color: #fff;
+  }
+
+  .todo-list-btn,
+  .logout-btn {
+    font: 400 16px/1.2 "DM Sans", sans-serif;
   }
 
   .theme-btn-wrapper {
