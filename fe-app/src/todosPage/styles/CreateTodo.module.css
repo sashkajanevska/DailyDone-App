@@ -78,7 +78,7 @@
   height: 42px;
 }
 
-/* .todo-date-input input::before {
+.todo-date-input.active::before {
   content: "mm/dd/yyyy";
   position: absolute;
   left: 15px;
@@ -92,13 +92,9 @@
   transition: color 0.15s;
 }
 
-.todo-date-input.dark-theme input::before {
+.todo-date-input.dark-theme.active::before {
   color: #cccfdf;
 }
-
-.todo-date-input input:valid::before {
-  content: "";
-} */
 
 .todo-date-input::after {
   content: url("../../../public/images/date-input.svg");

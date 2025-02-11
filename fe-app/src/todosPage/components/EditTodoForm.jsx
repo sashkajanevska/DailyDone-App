@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import handleTodoFormSubmit from "../../utils/handleTodoFormSubmit";
+import useWindowSize from "../../hooks/useWindowSize";
 import styles from "../styles/Todos.module.css";
 
 export default function EditTodoForm({
@@ -11,6 +12,7 @@ export default function EditTodoForm({
 }) {
   const [invalidFields, setInvalidFields] = useState([]);
   const [validationError, setValidationError] = useState("");
+  const { width } = useWindowSize();
   const { isDarkTheme } = useContext(ThemeContext);
   const themeClassName = isDarkTheme ? styles["dark-theme"] : "";
 
@@ -55,7 +57,11 @@ export default function EditTodoForm({
         ></textarea>
       </div>
 
-      <div className={`${styles["edit-date-input"]} ${themeClassName}`}>
+      <div
+        className={`${styles["edit-date-input"]} ${themeClassName} ${
+          width < 576 && !editedTodo.dueDate ? styles["active"] : ""
+        }`}
+      >
         <input
           style={{
             appearance: "none",
@@ -64,7 +70,6 @@ export default function EditTodoForm({
           }}
           type="date"
           max={"9999-12-31"}
-          placeholder="dd/mm/yyyy"
           className={invalidFields.includes("dueDate") ? "invalid" : ""}
           value={editedTodo.dueDate}
           onChange={(e) =>

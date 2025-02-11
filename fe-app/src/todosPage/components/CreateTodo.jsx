@@ -3,6 +3,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import Api from "../../Api";
 import handleErrorMessage from "../../utils/handleErrorMessage";
 import handleTodoFormSubmit from "../../utils/handleTodoFormSubmit";
+import useWindowSize from "../../hooks/useWindowSize";
 import styles from "../styles/CreateTodo.module.css";
 
 export default function CreateTodo({ setError, getTodos, isActive }) {
@@ -14,6 +15,7 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
   });
   const [validationError, setValidationError] = useState("");
   const [invalidFields, setInvalidFields] = useState([]);
+  const { width } = useWindowSize();
   const { isDarkTheme } = useContext(ThemeContext);
   const themeClassName = isDarkTheme ? styles["dark-theme"] : "";
 
@@ -99,7 +101,11 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
           ></textarea>
         </div>
 
-        <div className={`${styles["todo-date-input"]} ${themeClassName}`}>
+        <div
+          className={`${styles["todo-date-input"]} ${themeClassName} ${
+            width < 576 && !newTodo.dueDate ? styles["active"] : ""
+          }`}
+        >
           <input
             style={{
               appearance: "none",
@@ -108,7 +114,6 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
             }}
             type="date"
             max={"9999-12-31"}
-            placeholder="dd/mm/yyyy"
             className={invalidFields.includes("dueDate") ? "invalid" : ""}
             value={newTodo.dueDate}
             onChange={(e) =>

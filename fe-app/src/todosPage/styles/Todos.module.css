@@ -75,7 +75,7 @@
   height: 42px;
 }
 
-/* .edit-date-input::before {
+.edit-date-input.active::before {
   content: "mm/dd/yyyy";
   position: absolute;
   left: 15px;
@@ -89,9 +89,9 @@
   transition: color 0.15s;
 }
 
-.edit-date-input.dark-theme::before {
+.edit-date-input.dark-theme.active::before {
   color: #cccfdf;
-} */
+}
 
 .edit-date-input::after {
   content: url("../../../public/images/date-input.svg");
