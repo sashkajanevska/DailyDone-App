@@ -92,15 +92,15 @@ select {
     left: 10px;
     color: gray;
     pointer-events: none;
+    transition: content 0.1s;
   }
 
   input[type="date"]:focus,
-  input[type="date"]:valid {
+  input[type="date"]:not(:placeholder-shown) {
     color: black; /* Show text when a date is selected */
   }
 
-  input[type="date"]:focus::before,
-  input[type="date"]:valid::before {
+  input[type="date"]:not(:placeholder-shown)::before {
     content: "";
   }
 }
