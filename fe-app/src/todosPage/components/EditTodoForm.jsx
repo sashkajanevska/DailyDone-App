@@ -59,6 +59,7 @@ export default function EditTodoForm({
         <input
           type="date"
           max={"9999-12-31"}
+          placeholder="dd/mm/yyyy"
           className={invalidFields.includes("dueDate") ? "invalid" : ""}
           value={editedTodo.dueDate}
           onChange={(e) =>

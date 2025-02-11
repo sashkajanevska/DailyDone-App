@@ -103,6 +103,7 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
           <input
             type="date"
             max={"9999-12-31"}
+            placeholder="dd/mm/yyyy"
             className={invalidFields.includes("dueDate") ? "invalid" : ""}
             value={newTodo.dueDate}
             onChange={(e) =>

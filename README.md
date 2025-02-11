@@ -6,8 +6,6 @@ DailyDone is a simple and efficient To-Do List app designed to help you manage y
 
 ## 📌 Pages
 
-### Active Pages
-
 - **Home - Log In/Register**
 - **To-dos**
 
@@ -80,8 +78,8 @@ https://dailydone-5m06.onrender.com/
 - Set up MongoDB:
   - Create a MongoDB Atlas account (if you don’t have one).
   - Create a cluster in the default Project 0 directory.
-  - Get the connection string from your cluster and add it to the .env file as follows: MONGO_HOST=mongodb+srv://username:password@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=myApp.
   - **IMPORTANT:** Copy the password when you create the cluster, then replace "password" in the connection string with the correct value.
+  - Get the connection string from your cluster and add it to the .env file as follows: MONGO_HOST=mongodb+srv://username:password@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=myApp.
   - For more details, follow the [MongoDB Atlas Connection Guide](https://www.mongodb.com/docs/atlas/tutorial/connect-to-your-cluster).
   - Generate a secret key for authentication:
     - **Open the Node.js console by running** --> (node)
