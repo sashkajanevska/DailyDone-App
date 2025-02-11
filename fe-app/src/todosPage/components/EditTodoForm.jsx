@@ -55,8 +55,13 @@ export default function EditTodoForm({
         ></textarea>
       </div>
 
-      <div className={styles["edit-date-input"]}>
+      <div className={`${styles["edit-date-input"]} ${themeClassName}`}>
         <input
+          style={{
+            appearance: "none",
+            WebkitAppearance: "none",
+            MozAppearance: "none",
+          }}
           type="date"
           max={"9999-12-31"}
           placeholder="dd/mm/yyyy"

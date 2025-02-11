@@ -78,6 +78,28 @@
   height: 42px;
 }
 
+/* .todo-date-input input::before {
+  content: "mm/dd/yyyy";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #272727;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transform: translate(0, -50%);
+  transition: color 0.15s;
+}
+
+.todo-date-input.dark-theme input::before {
+  color: #cccfdf;
+}
+
+.todo-date-input input:valid::before {
+  content: "";
+} */
+
 .todo-date-input::after {
   content: url("../../../public/images/date-input.svg");
   position: absolute;

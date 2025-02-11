@@ -99,8 +99,13 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
           ></textarea>
         </div>
 
-        <div className={styles["todo-date-input"]}>
+        <div className={`${styles["todo-date-input"]} ${themeClassName}`}>
           <input
+            style={{
+              appearance: "none",
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+            }}
             type="date"
             max={"9999-12-31"}
             placeholder="dd/mm/yyyy"

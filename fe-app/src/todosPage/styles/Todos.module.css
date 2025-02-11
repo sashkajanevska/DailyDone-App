@@ -75,6 +75,24 @@
   height: 42px;
 }
 
+/* .edit-date-input::before {
+  content: "mm/dd/yyyy";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #272727;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transform: translate(0, -50%);
+  transition: color 0.15s;
+}
+
+.edit-date-input.dark-theme::before {
+  color: #cccfdf;
+} */
+
 .edit-date-input::after {
   content: url("../../../public/images/date-input.svg");
   position: absolute;

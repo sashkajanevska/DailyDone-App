@@ -22,9 +22,6 @@ body {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   opacity: 0;
 }
 
@@ -81,4 +78,29 @@ select {
 .App.dark-theme select.invalid,
 .App.dark-theme textarea.invalid {
   border: 1px solid #38a6d9;
+}
+
+@media (max-width: 575px) {
+  input[type="date"] {
+    position: relative;
+    color: transparent; /* Hide the default date text */
+  }
+
+  input[type="date"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    left: 10px;
+    color: gray;
+    pointer-events: none;
+  }
+
+  input[type="date"]:focus,
+  input[type="date"]:valid {
+    color: black; /* Show text when a date is selected */
+  }
+
+  input[type="date"]:focus::before,
+  input[type="date"]:valid::before {
+    content: "";
+  }
 }
