@@ -103,7 +103,7 @@ export default function CreateTodo({ setError, getTodos, isActive }) {
 
         <div
           className={`${styles["todo-date-input"]} ${themeClassName} ${
-            width < 576 && !newTodo.dueDate ? styles["active"] : ""
+            width < 1200 && !newTodo.dueDate ? styles["active"] : ""
           }`}
         >
           <input

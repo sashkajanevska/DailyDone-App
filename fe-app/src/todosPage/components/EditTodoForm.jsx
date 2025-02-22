@@ -59,7 +59,7 @@ export default function EditTodoForm({
 
       <div
         className={`${styles["edit-date-input"]} ${themeClassName} ${
-          width < 576 && !editedTodo.dueDate ? styles["active"] : ""
+          width < 1200 && !editedTodo.dueDate ? styles["active"] : ""
         }`}
       >
         <input
