@@ -12,6 +12,7 @@ export default function LoginForm({ styles }) {
     password: "",
   });
   const [loginError, setLoginError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const { isDarkTheme } = useContext(ThemeContext);
   const { setUser } = useContext(UserContext);
@@ -28,10 +29,13 @@ export default function LoginForm({ styles }) {
 
       localStorage.setItem("userData", JSON.stringify(userData));
       setUser(userData.jwt);
+      setIsLoading(false);
       setLoginCredentials({ email: "", password: "" });
       setLoginError("");
     } catch (error) {
       let message = handleErrorMessage(error);
+
+      setIsLoading(false);
       setLoginError(message);
     }
   };
@@ -43,6 +47,7 @@ export default function LoginForm({ styles }) {
       noValidate={true}
       onSubmit={(e) => {
         e.preventDefault(e);
+        setIsLoading(true);
         handleAuthFormSubmit(loginCredentials, setLoginError, login);
       }}
     >
@@ -94,7 +99,9 @@ export default function LoginForm({ styles }) {
       </div>
 
       <div className={styles["login-btn"]}>
-        <button type="submit">Log In</button>
+        <button type="submit">
+          Log In {isLoading && <p className={styles["loading"]}></p>}
+        </button>
       </div>
     </form>
   );

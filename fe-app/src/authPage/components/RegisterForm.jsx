@@ -13,6 +13,7 @@ export default function RegisterForm({ styles }) {
     password: "",
   });
   const [registerError, setRegisterError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const { isDarkTheme } = useContext(ThemeContext);
   const { setUser } = useContext(UserContext);
@@ -29,10 +30,13 @@ export default function RegisterForm({ styles }) {
 
       localStorage.setItem("userData", JSON.stringify(userData));
       setUser(userData.jwt);
+      setIsLoading(false);
       setRegisterCredentials({ username: "", email: "", password: "" });
       setRegisterError("");
     } catch (error) {
       let message = handleErrorMessage(error);
+
+      setIsLoading(false);
       setRegisterError(message);
     }
   };
@@ -44,6 +48,7 @@ export default function RegisterForm({ styles }) {
       noValidate={true}
       onSubmit={(e) => {
         e.preventDefault();
+        setIsLoading(true);
         handleAuthFormSubmit(registerCredentials, setRegisterError, register);
       }}
     >
@@ -109,7 +114,9 @@ export default function RegisterForm({ styles }) {
       </div>
 
       <div className={styles["register-btn"]}>
-        <button type="submit">Sign Up</button>
+        <button type="submit">
+          Sign Up {isLoading && <p className={styles["loading"]}></p>}
+        </button>
       </div>
     </form>
   );
