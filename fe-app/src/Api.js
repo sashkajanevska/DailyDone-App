@@ -4,7 +4,7 @@ const Api = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
 
   return axios.create({
-    baseURL: process.env.REACT_APP_BACKEND_API,
+    baseURL: import.meta.env.VITE_BACKEND_API,
     headers: {
       ...(userData?.jwt && { Authorization: userData.jwt }),
       "Access-Control-Allow-Origin": "*",
